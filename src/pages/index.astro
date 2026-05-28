@@ -99,7 +99,12 @@ import '../styles/global.css';
             <a href="https://github.com/jawahar4k" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">GitHub</a>
           </li>
           <li>
-            <a href="mailto:hi@jawaharprasad.com" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">hi@jawaharprasad.com</a>
+            <a
+              href="#contact"
+              data-user="hi"
+              data-domain="jawaharprasad.com"
+              class="email-link text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition"
+            >hi [at] jawaharprasad [dot] com</a>
           </li>
         </ul>
       </section>
@@ -107,9 +112,26 @@ import '../styles/global.css';
       <section aria-labelledby="subscribe" class="mb-16">
         <h2 id="subscribe" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Get future posts</h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          No newsletter yet — I'm publishing on <a href="https://www.linkedin.com/in/jawaharprasad" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">LinkedIn</a> for now. Email me at <a href="mailto:hi@jawaharprasad.com?subject=Subscribe" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">hi@jawaharprasad.com</a> if you want a heads-up when I launch one.
+          No newsletter yet — I'm publishing on <a href="https://www.linkedin.com/in/jawaharprasad" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">LinkedIn</a> for now. Email me at <a
+            href="#subscribe"
+            data-user="hi"
+            data-domain="jawaharprasad.com"
+            data-subject="Subscribe"
+            class="email-link underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4"
+          >hi [at] jawaharprasad [dot] com</a> if you want a heads-up when I launch one.
         </p>
       </section>
+
+      <script is:inline>
+        // Defer email rendering until JS runs - scrapers see "hi [at] jawaharprasad [dot] com"
+        // in static HTML; humans see the real address + working mailto: after page loads.
+        document.querySelectorAll('a.email-link').forEach((el) => {
+          const addr = el.dataset.user + '@' + el.dataset.domain;
+          const subject = el.dataset.subject ? '?subject=' + encodeURIComponent(el.dataset.subject) : '';
+          el.href = 'mailto:' + addr + subject;
+          el.textContent = addr;
+        });
+      </script>
 
       <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-500">
         © Jawahar Prasad · jawaharprasad.com
