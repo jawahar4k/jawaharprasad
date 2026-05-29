@@ -104,7 +104,7 @@ import '../styles/global.css';
               data-user="hi"
               data-domain="jawaharprasad.com"
               class="email-link text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition"
-            >hi [at] jawaharprasad [dot] com</a>
+            >Click to reveal email</a>
           </li>
         </ul>
       </section>
@@ -112,24 +112,30 @@ import '../styles/global.css';
       <section aria-labelledby="subscribe" class="mb-16">
         <h2 id="subscribe" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Get future posts</h2>
         <p class="text-lg text-slate-600 leading-relaxed">
-          No newsletter yet. I'm publishing on <a href="https://www.linkedin.com/in/jawaharprasad" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">LinkedIn</a> for now. Email me at <a
+          No newsletter yet. I'm publishing on <a href="https://www.linkedin.com/in/jawaharprasad" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">LinkedIn</a> for now. Want a heads-up when I launch one? <a
             href="#subscribe"
             data-user="hi"
             data-domain="jawaharprasad.com"
             data-subject="Subscribe"
             class="email-link underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4"
-          >hi [at] jawaharprasad [dot] com</a> if you want a heads-up when I launch one.
+          >Click to reveal my email address</a>.
         </p>
       </section>
 
       <script is:inline>
-        // Defer email rendering until JS runs - scrapers see "hi [at] jawaharprasad [dot] com"
-        // in static HTML; humans see the real address + working mailto: after page loads.
+        // Click-to-reveal email obfuscation. The real address never appears in the static HTML
+        // or before the human clicks. First click reveals + sets up mailto:; second click sends.
         document.querySelectorAll('a.email-link').forEach((el) => {
-          const addr = el.dataset.user + '@' + el.dataset.domain;
-          const subject = el.dataset.subject ? '?subject=' + encodeURIComponent(el.dataset.subject) : '';
-          el.href = 'mailto:' + addr + subject;
-          el.textContent = addr;
+          el.addEventListener('click', function (e) {
+            if (!el.dataset.revealed) {
+              e.preventDefault();
+              const addr = el.dataset.user + '@' + el.dataset.domain;
+              const subject = el.dataset.subject ? '?subject=' + encodeURIComponent(el.dataset.subject) : '';
+              el.href = 'mailto:' + addr + subject;
+              el.textContent = addr;
+              el.dataset.revealed = 'true';
+            }
+          });
         });
       </script>
 
