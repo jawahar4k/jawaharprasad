@@ -5,6 +5,7 @@ interface Props {
   title: string;
   description: string;
   path: string;
+  isHome?: boolean;
   ogTitle?: string;
   ogDescription?: string;
   ogType?: string;
@@ -15,6 +16,7 @@ const {
   title,
   description,
   path,
+  isHome = false,
   ogTitle = title,
   ogDescription = description,
   ogType = 'website',
@@ -51,6 +53,37 @@ const url = `https://www.jawaharprasad.com${path}`;
 
   <body class="bg-white text-slate-900 antialiased">
     <main class="max-w-2xl mx-auto px-6 py-16 sm:py-24">
+      {isHome ? (
+        <header class="mb-16 flex items-center gap-6">
+          <img
+            src="/jawahar.jpg"
+            alt="Jawahar Prasad"
+            width="128"
+            height="128"
+            class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover ring-1 ring-slate-200 flex-shrink-0"
+          />
+          <div>
+            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Jawahar Prasad</h1>
+            <p class="mt-1 text-base sm:text-lg text-slate-600">
+              Senior Director of Engineering · Tekion · Architecting AI dev productivity at scale
+            </p>
+          </div>
+        </header>
+      ) : (
+        <header class="mb-12">
+          <a href="/" class="group inline-flex items-center gap-3">
+            <img
+              src="/jawahar.jpg"
+              alt="Jawahar Prasad"
+              width="44"
+              height="44"
+              class="w-11 h-11 rounded-full object-cover ring-1 ring-slate-200 flex-shrink-0"
+            />
+            <span class="font-bold tracking-tight text-slate-900 underline decoration-transparent group-hover:decoration-slate-900 underline-offset-4 transition">Jawahar Prasad</span>
+          </a>
+        </header>
+      )}
+
       <slot />
 
       <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-500">
