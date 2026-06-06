@@ -1,89 +1,49 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://www.jawaharprasad.com/leadership" />
+<Layout
+  title="How I lead · Jawahar Prasad"
+  description="How Jawahar Prasad leads engineering teams: trust through transparency, bias for action, real delegation, and treating everything as learning."
+  ogDescription="Trust through transparency, bias for action, real delegation, and treating everything as learning."
+  ogType="profile"
+  path="/leadership"
+>
+  <nav class="mb-12">
+    <a href="/" class="text-sm text-slate-500 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">&larr; Jawahar Prasad</a>
+  </nav>
 
-    <title>How I lead · Jawahar Prasad</title>
-    <meta name="description" content="How Jawahar Prasad leads engineering teams: trust through transparency, bias for action, real delegation, and treating everything as learning." />
+  <header class="mb-12">
+    <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How I lead</h1>
+    <p class="mt-1 text-base sm:text-lg text-slate-600">
+      I lead the way I measure: I trust what shows up in outcomes, not what shows up in a status update.
+    </p>
+  </header>
 
-    <!-- Open Graph (LinkedIn / Twitter sharing) -->
-    <meta property="og:type" content="profile" />
-    <meta property="og:url" content="https://www.jawaharprasad.com/leadership" />
-    <meta property="og:title" content="How I lead · Jawahar Prasad" />
-    <meta property="og:description" content="Trust through transparency, bias for action, real delegation, and treating everything as learning." />
-    <meta property="og:image" content="https://www.jawaharprasad.com/jawahar.jpg" />
-
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="How I lead · Jawahar Prasad" />
-    <meta name="twitter:description" content="Trust through transparency, bias for action, real delegation, and treating everything as learning." />
-    <meta name="twitter:image" content="https://www.jawaharprasad.com/jawahar.jpg" />
-
-    <!-- Favicon: minimal text-based via SVG (no separate file needed) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='90' font-family='system-ui,sans-serif' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E" />
-  </head>
-
-  <body class="bg-white text-slate-900 antialiased">
-    <main class="max-w-2xl mx-auto px-6 py-16 sm:py-24">
-
-      <nav class="mb-12">
-        <a href="/" class="text-sm text-slate-500 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">&larr; Jawahar Prasad</a>
-      </nav>
-
-      <header class="mb-12">
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">How I lead</h1>
-        <p class="mt-1 text-base sm:text-lg text-slate-600">
-          I lead the way I measure: I trust what shows up in outcomes, not what shows up in a status update.
-        </p>
-      </header>
-
-      <section class="space-y-8 text-lg leading-relaxed text-slate-800 mb-16">
-        <p>
-          <strong class="block text-slate-900">Measure outcomes, not activity.</strong>
-          I don't trust a productivity claim I can't verify without a survey. Narrative is cheap; what merged, shipped, and held up in production is not. I hold my own work to the same bar.
-        </p>
-        <p>
-          <strong class="block text-slate-900">Lead the system, not the heroics.</strong>
-          At scale, the wins don't come from any one person working harder. They come from the system the team works inside: the tooling, the agents, the feedback loops, the way work flows to merge. That, and increasingly how people and agents split the work, is where I spend my time.
-        </p>
-        <p>
-          <strong class="block text-slate-900">Decide fast; most doors open both ways.</strong>
-          Most decisions are reversible, and a wrong call you can fix beats a right call made too late. I'd rather correct in a week than deliberate for a month.
-        </p>
-        <p>
-          <strong class="block text-slate-900">Delegate the decision, not just the task.</strong>
-          I hand over real authority, then trust, verify, and critique the decision without criticizing the person. My job is to build leaders who don't need me in the room.
-        </p>
-        <p>
-          <strong class="block text-slate-900">Transparency, in good quarters and bad.</strong>
-          I'd rather report a smaller number I can stand behind than a bigger one I have to caveat. I expect the same candor back.
-        </p>
-        <p>
-          <strong class="block text-slate-900">It's all learning.</strong>
-          I learn every day from what works and what doesn't, and I treat being corrected as the cheapest information I get.
-        </p>
-      </section>
-
-      <section aria-labelledby="more" class="mb-16">
-        <h2 id="more" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">More</h2>
-        <ul class="space-y-2 text-lg">
-          <li>
-            <a href="/about" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">More about me &rarr;</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/jawaharprasad" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">LinkedIn</a>
-          </li>
-        </ul>
-      </section>
-
-      <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-500">
-        © Jawahar Prasad · jawaharprasad.com
-      </footer>
-
-    </main>
-  </body>
-</html>
+  <section class="space-y-8 text-lg leading-relaxed text-slate-800">
+    <p>
+      <strong class="block text-slate-900">Measure outcomes, not activity.</strong>
+      I don't trust a productivity claim I can't verify without a survey. Narrative is cheap; what merged, shipped, and held up in production is not. I hold my own work to the same bar.
+    </p>
+    <p>
+      <strong class="block text-slate-900">Lead the system, not the heroics.</strong>
+      At scale, the wins don't come from any one person working harder. They come from the system the team works inside: the tooling, the agents, the feedback loops, the way work flows to merge. That, and increasingly how people and agents split the work, is where I spend my time.
+    </p>
+    <p>
+      <strong class="block text-slate-900">Decide fast; most doors open both ways.</strong>
+      Most decisions are reversible, and a wrong call you can fix beats a right call made too late. I'd rather correct in a week than deliberate for a month.
+    </p>
+    <p>
+      <strong class="block text-slate-900">Delegate the decision, not just the task.</strong>
+      I hand over real authority, then trust, verify, and critique the decision without criticizing the person. My job is to build leaders who don't need me in the room.
+    </p>
+    <p>
+      <strong class="block text-slate-900">Transparency, in good quarters and bad.</strong>
+      I'd rather report a smaller number I can stand behind than a bigger one I have to caveat. I expect the same candor back.
+    </p>
+    <p>
+      <strong class="block text-slate-900">It's all learning.</strong>
+      I learn every day from what works and what doesn't, and I treat being corrected as the cheapest information I get.
+    </p>
+  </section>
+</Layout>

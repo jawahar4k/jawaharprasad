@@ -1,153 +1,124 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://www.jawaharprasad.com/" />
+<Layout
+  title="Jawahar Prasad, Senior Director of Engineering, Tekion"
+  description="Jawahar Prasad architects AI dev productivity at scale at Tekion, including the measurement framework that doesn't depend on AI lineage or surveys."
+  ogDescription="Builds AI dev productivity at scale, and the measurement framework that doesn't depend on AI lineage or surveys."
+  path="/"
+>
+  <header class="mb-16 flex items-center gap-6">
+    <img
+      src="/jawahar.jpg"
+      alt="Jawahar Prasad"
+      width="128"
+      height="128"
+      class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover ring-1 ring-slate-200 flex-shrink-0"
+    />
+    <div>
+      <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Jawahar Prasad</h1>
+      <p class="mt-1 text-base sm:text-lg text-slate-600">
+        Senior Director of Engineering · Tekion · Architecting AI dev productivity at scale
+      </p>
+    </div>
+  </header>
 
-    <title>Jawahar Prasad, Senior Director of Engineering, Tekion</title>
-    <meta name="description" content="Jawahar Prasad architects AI dev productivity at scale at Tekion, including the measurement framework that doesn't depend on AI lineage or surveys." />
+  <section aria-labelledby="lead" class="mb-12">
+    <p id="lead" class="text-2xl sm:text-3xl font-semibold leading-snug tracking-tight text-slate-900">
+      I build AI dev productivity at scale, and the measurement framework that doesn't depend on AI lineage or surveys.
+    </p>
+  </section>
 
-    <!-- Open Graph (LinkedIn / Twitter sharing) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.jawaharprasad.com/" />
-    <meta property="og:title" content="Jawahar Prasad, Senior Director of Engineering, Tekion" />
-    <meta property="og:description" content="Builds AI dev productivity at scale, and the measurement framework that doesn't depend on AI lineage or surveys." />
-    <meta property="og:image" content="https://www.jawaharprasad.com/jawahar.jpg" />
+  <section class="space-y-6 text-lg leading-relaxed text-slate-800 mb-16">
+    <p>
+      Currently Senior Director of Engineering at Tekion, architecting <strong>ORBIT</strong>: Tekion's agentic AI dev-productivity platform running across thousands of repositories (700+ microservices), used across engineering, QA, and product. ORBIT replaced <strong>PDAF</strong> (Persona-Driven AI Framework), the prompt-driven AI agent framework I shipped in 2025. PDAF produced the results Augment Code documented in their December 2025 customer feature: 60% reduction in merge time (3 days to 1 day), +21% MR volume at the same headcount.
+    </p>
+    <p>
+      ORBIT's sub-systems: <strong>DeepContext</strong> (hybrid retrieval over Jira, Confluence, code, PRs), <strong>Central</strong> (agentic orchestration with sandboxed execution), and <strong>CPI</strong> (Composite Productivity Index, a measurement framework introduced in a paper in development). <strong>AIR</strong> (incident-response research direction) is in early preview.
+    </p>
+    <p>
+      Twenty-one years building large-scale platforms; ~16 of them in ML, search, shopping, and AI. Yahoo!, Jabong, Flipkart (doubled ads revenue, Best People Manager 2018), Amazon (Recommendations and Personalization). Founding team of what became <strong>Whatfix</strong> (2010, left after 13 months before product-market fit).
+    </p>
+    <p>
+      I write about AI-native developer productivity at scale: the builder, leader, and measurer angle in one voice.
+    </p>
+    <p class="text-slate-600">
+      Bay Area · originally Bangalore.
+    </p>
+  </section>
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Jawahar Prasad, Senior Director of Engineering, Tekion" />
-    <meta name="twitter:description" content="Builds AI dev productivity at scale, and the measurement framework that doesn't depend on AI lineage or surveys." />
-    <meta name="twitter:image" content="https://www.jawaharprasad.com/jawahar.jpg" />
+  <nav aria-label="More pages" class="mb-16 flex flex-wrap gap-x-8 gap-y-2 text-lg">
+    <a href="/about" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">More about me &rarr;</a>
+    <a href="/leadership" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">How I lead &rarr;</a>
+  </nav>
 
-    <!-- Favicon: minimal text-based via SVG (no separate file needed) -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='80' font-size='90' font-family='system-ui,sans-serif' font-weight='700'%3EJ%3C/text%3E%3C/svg%3E" />
-  </head>
+  <section aria-labelledby="work" class="mb-16">
+    <h2 id="work" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Selected work</h2>
+    <ul class="space-y-3 text-lg">
+      <li>
+        <a href="https://leaddev.com/community/jawahar-prasad" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">
+          LeadDev: How Tekion enabled 1,300 employees to work with agents
+        </a>
+      </li>
+      <li>
+        <a href="https://www.augmentcode.com/blog/introducing-augment-code-review" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">
+          Augment Code customer feature, Dec 2025: 60% merge-time reduction at scale
+        </a>
+      </li>
+      <li class="text-slate-500">
+        CPI: Measuring AI Impact on Engineering Productivity Without Lineage or Surveys <span class="text-sm">(paper in development)</span>
+      </li>
+    </ul>
+  </section>
 
-  <body class="bg-white text-slate-900 antialiased">
-    <main class="max-w-2xl mx-auto px-6 py-16 sm:py-24">
+  <section aria-labelledby="elsewhere" class="mb-16">
+    <h2 id="elsewhere" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Elsewhere</h2>
+    <ul class="space-y-2 text-lg">
+      <li>
+        <a href="https://www.linkedin.com/in/jawaharprasad" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">LinkedIn</a>
+      </li>
+      <li>
+        <a href="https://github.com/jawahar4k" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">GitHub</a>
+      </li>
+      <li>
+        <a
+          href="#contact"
+          data-user="hi"
+          data-domain="jawaharprasad.com"
+          class="email-link text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition"
+        >Click to reveal email</a>
+      </li>
+    </ul>
+  </section>
 
-      <header class="mb-16 flex items-center gap-6">
-        <img
-          src="/jawahar.jpg"
-          alt="Jawahar Prasad"
-          width="128"
-          height="128"
-          class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover ring-1 ring-slate-200 flex-shrink-0"
-        />
-        <div>
-          <h1 class="text-3xl sm:text-4xl font-bold tracking-tight">Jawahar Prasad</h1>
-          <p class="mt-1 text-base sm:text-lg text-slate-600">
-            Senior Director of Engineering · Tekion · Architecting AI dev productivity at scale
-          </p>
-        </div>
-      </header>
+  <section aria-labelledby="subscribe" class="mb-16">
+    <h2 id="subscribe" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Get future posts</h2>
+    <p class="text-lg text-slate-600 leading-relaxed">
+      No newsletter yet. I'm publishing on <a href="https://www.linkedin.com/in/jawaharprasad" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">LinkedIn</a> for now. Want a heads-up when I launch one? <a
+        href="#subscribe"
+        data-user="hi"
+        data-domain="jawaharprasad.com"
+        data-subject="Subscribe"
+        class="email-link underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4"
+      >Click to reveal my email address</a>.
+    </p>
+  </section>
 
-      <section aria-labelledby="lead" class="mb-12">
-        <p id="lead" class="text-2xl sm:text-3xl font-semibold leading-snug tracking-tight text-slate-900">
-          I build AI dev productivity at scale, and the measurement framework that doesn't depend on AI lineage or surveys.
-        </p>
-      </section>
-
-      <section class="space-y-6 text-lg leading-relaxed text-slate-800 mb-16">
-        <p>
-          Currently Senior Director of Engineering at Tekion, architecting <strong>ORBIT</strong>: Tekion's agentic AI dev-productivity platform running across thousands of repositories (700+ microservices), used across engineering, QA, and product. ORBIT replaced <strong>PDAF</strong> (Persona-Driven AI Framework), the prompt-driven AI agent framework I shipped in 2025. PDAF produced the results Augment Code documented in their December 2025 customer feature: 60% reduction in merge time (3 days to 1 day), +21% MR volume at the same headcount.
-        </p>
-        <p>
-          ORBIT's sub-systems: <strong>DeepContext</strong> (hybrid retrieval over Jira, Confluence, code, PRs), <strong>Central</strong> (agentic orchestration with sandboxed execution), and <strong>CPI</strong> (Composite Productivity Index, a measurement framework introduced in a paper in development). <strong>AIR</strong> (incident-response research direction) is in early preview.
-        </p>
-        <p>
-          Twenty-one years building large-scale platforms; ~16 of them in ML, search, shopping, and AI. Yahoo!, Jabong, Flipkart (doubled ads revenue, Best People Manager 2018), Amazon (Recommendations and Personalization). Founding team of what became <strong>Whatfix</strong> (2010, left after 13 months before product-market fit).
-        </p>
-        <p>
-          I write about AI-native developer productivity at scale: the builder, leader, and measurer angle in one voice.
-        </p>
-        <p class="text-slate-600">
-          Bay Area · originally Bangalore.
-        </p>
-      </section>
-
-      <nav aria-label="More pages" class="mb-16 flex flex-wrap gap-x-8 gap-y-2 text-lg">
-        <a href="/about" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">More about me &rarr;</a>
-        <a href="/leadership" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition">How I lead &rarr;</a>
-      </nav>
-
-      <section aria-labelledby="work" class="mb-16">
-        <h2 id="work" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Selected work</h2>
-        <ul class="space-y-3 text-lg">
-          <li>
-            <a href="https://leaddev.com/community/jawahar-prasad" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">
-              LeadDev: How Tekion enabled 1,300 employees to work with agents
-            </a>
-          </li>
-          <li>
-            <a href="https://www.augmentcode.com/blog/introducing-augment-code-review" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">
-              Augment Code customer feature, Dec 2025: 60% merge-time reduction at scale
-            </a>
-          </li>
-          <li class="text-slate-500">
-            CPI: Measuring AI Impact on Engineering Productivity Without Lineage or Surveys <span class="text-sm">(paper in development)</span>
-          </li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="elsewhere" class="mb-16">
-        <h2 id="elsewhere" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Elsewhere</h2>
-        <ul class="space-y-2 text-lg">
-          <li>
-            <a href="https://www.linkedin.com/in/jawaharprasad" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://github.com/jawahar4k" class="text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition" rel="noopener">GitHub</a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              data-user="hi"
-              data-domain="jawaharprasad.com"
-              class="email-link text-slate-900 underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4 transition"
-            >Click to reveal email</a>
-          </li>
-        </ul>
-      </section>
-
-      <section aria-labelledby="subscribe" class="mb-16">
-        <h2 id="subscribe" class="text-sm font-semibold uppercase tracking-wider text-slate-500 mb-4">Get future posts</h2>
-        <p class="text-lg text-slate-600 leading-relaxed">
-          No newsletter yet. I'm publishing on <a href="https://www.linkedin.com/in/jawaharprasad" class="underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4">LinkedIn</a> for now. Want a heads-up when I launch one? <a
-            href="#subscribe"
-            data-user="hi"
-            data-domain="jawaharprasad.com"
-            data-subject="Subscribe"
-            class="email-link underline decoration-slate-300 hover:decoration-slate-900 underline-offset-4"
-          >Click to reveal my email address</a>.
-        </p>
-      </section>
-
-      <script is:inline>
-        // Click-to-reveal email obfuscation. The real address never appears in the static HTML
-        // or before the human clicks. First click reveals + sets up mailto:; second click sends.
-        document.querySelectorAll('a.email-link').forEach((el) => {
-          el.addEventListener('click', function (e) {
-            if (!el.dataset.revealed) {
-              e.preventDefault();
-              const addr = el.dataset.user + '@' + el.dataset.domain;
-              const subject = el.dataset.subject ? '?subject=' + encodeURIComponent(el.dataset.subject) : '';
-              el.href = 'mailto:' + addr + subject;
-              el.textContent = addr;
-              el.dataset.revealed = 'true';
-            }
-          });
-        });
-      </script>
-
-      <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-500">
-        © Jawahar Prasad · jawaharprasad.com
-      </footer>
-
-    </main>
-  </body>
-</html>
+  <script is:inline>
+    // Click-to-reveal email obfuscation. The real address never appears in the static HTML
+    // or before the human clicks. First click reveals + sets up mailto:; second click sends.
+    document.querySelectorAll('a.email-link').forEach((el) => {
+      el.addEventListener('click', function (e) {
+        if (!el.dataset.revealed) {
+          e.preventDefault();
+          const addr = el.dataset.user + '@' + el.dataset.domain;
+          const subject = el.dataset.subject ? '?subject=' + encodeURIComponent(el.dataset.subject) : '';
+          el.href = 'mailto:' + addr + subject;
+          el.textContent = addr;
+          el.dataset.revealed = 'true';
+        }
+      });
+    });
+  </script>
+</Layout>
